@@ -1,4 +1,4 @@
-**Get Single Issue**
+**Get Issue**
 ----
   Returns json data about a single issue.
 
@@ -17,10 +17,6 @@
    `id=[integer]` <br/>
    `language=[string]`
 
-* **Data Params**
-
-  None
-
 * **Success Response:**
 
   * **Code:** 200 <br />
@@ -38,7 +34,5 @@
   * **Code:** 404 NOT FOUND <br />
     **Content:**
     ```
-    {
-        error: "Issue doesn't exist"
-    }
+    { error: "Issue doesn't exist" }
     ```
