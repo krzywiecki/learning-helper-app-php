@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /api/issues/:id
+  `/api/issues/:id`
 
 * **Method:**
 
