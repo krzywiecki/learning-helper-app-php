@@ -16,7 +16,7 @@
 
   `issue=[string]` <br/>
   `translation=[string]` <br/>
-  `language=[string]`
+  `lang=[string]`
 
 * **Success Response:**
 
@@ -31,8 +31,5 @@
   * **Code:** 409 CONFLICT <br />
     **Content:**
     ```
-    {
-        error: "Issue already exists."
-        id: 5
-    }
+    { message: "Issue already exists." }
     ```

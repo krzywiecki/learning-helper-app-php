@@ -16,6 +16,8 @@ class CreateIssuesTable extends Migration
             $table->timestamps();
 
             $table->unique(['issue', 'lang']);
+            $table->index('issue');
+            $table->index(['issue', 'lang']);
         });
     }
 
