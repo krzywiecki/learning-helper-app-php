@@ -82,7 +82,13 @@
                     Laravel
                 </div>
 
-                Registration page will be here
+                <form action="/api/register" method="post">
+                    <input name="name" placeholder="name">
+                    <input type="email" name="email" placeholder="email">
+                    <input type="password" name="password" placeholder="password">
+
+                    <button>submit</button>
+                </form>
             </div>
         </div>
     </body>

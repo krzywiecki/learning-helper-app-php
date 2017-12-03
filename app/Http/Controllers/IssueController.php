@@ -12,15 +12,10 @@ class IssueController extends Controller
 
     public function create(Request $request)
     {
-        $validation = Validator::make($request->all(), [
-            'issue' => 'required|max:255',
-            'lang' => 'required|min:2|max:2',
-            'translation_lang' => 'required|min:2|max:2',
-            'translation' => 'required|max:255',
-        ]);
+        $validator = $this->validator($request->all());
 
-        if ($validation->fails()) {
-            return response()->json($validation->errors(), 400);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
         }
 
         $issue = IssueModel::firstOrCreate([
@@ -39,5 +34,15 @@ class IssueController extends Controller
     public function show(int $id)
     {
         return response()->json(IssueModel::find($id));
+    }
+
+    private function validator(array $data)
+    {
+        return Validator::make($data, [
+            'issue' => 'required|max:255',
+            'lang' => 'required|min:2|max:2',
+            'translation_lang' => 'required|min:2|max:2',
+            'translation' => 'required|max:255',
+        ]);
     }
 }
